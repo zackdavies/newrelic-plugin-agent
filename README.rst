@@ -142,6 +142,10 @@ The agent requires the extended information to parse metrics. If you are not see
 
 If you are monitoring Apache HTTPd via a HTTPS connection you can use the ``verify_ssl_cert`` configuration value in the httpd configuration section to disable SSL certificate verification.
 
+Elasticsearch Installation Notes
+--------------------------------
+The configuration variables "username and "password" apply only to installations using specific plugins, such as https://github.com/sonian/elasticsearch-jetty, to provide HTTP authentication.  This is not default Elasticsearch functionality.
+
 Memcached Installation Notes
 ----------------------------
 The memcached plugin can communicate either over UNIX domain sockets using the path configuration variable or TCP/IP using the host and port variables. Do not include both.
@@ -302,6 +306,8 @@ Configuration Example
         name: clustername
         host: localhost
         port: 9200
+        #username: foo
+        #password: bar
 
       haproxy:
         name: my-haproxy-server
